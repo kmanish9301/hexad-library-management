@@ -1,73 +1,73 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📚 Library Management Frontend
 
-Currently, two official plugins are available:
+A single-page **frontend-only** Library Management application built with **React (Vite)** and **TypeScript**, styled using **Material UI**, and tested with **Vitest + React Testing Library**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project implements all the user stories from the **Hexad Fullstack Coding Challenge**, focusing on the **frontend** part only.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features Implemented
 
-## Expanding the ESLint configuration
+✅ View available books in the library  
+✅ Borrow a book (reduces available copies)  
+✅ Borrow a copy of a book when multiple copies exist  
+✅ Borrowing limit of maximum **2 books per user**  
+✅ Return borrowed books (restores library copies)  
+✅ Clean, responsive UI using **Material UI**  
+✅ Unit & integration tests using **Vitest**  
+✅ Strongly typed code with TypeScript  
+✅ Context + Reducer pattern for predictable state management  
+✅ Code follows SOLID, DRY, and clean architecture guidelines  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧩 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Category | Technology |
+|-----------|-------------|
+| Framework | [React 18 + Vite](https://vitejs.dev/) |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+| UI Library | [Material UI (MUI v6)](https://mui.com/) |
+| State Management | React Context + useReducer |
+| Testing | [Vitest](https://vitest.dev/), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) |
+| Package Manager | npm |
+| Linting / Formatting | ESLint + Prettier |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2️⃣ Start Development Server
+npm run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Open your browser → http://localhost:5173
+
+3️⃣ Run Tests
+npm run test
+
+
+Uses Vitest + React Testing Library for unit & integration tests.
+
+4️⃣ Build for Production
+npm run build
+npm run preview
+
+🧪 Test Coverage
+Covered Scenarios:
+
+✅ Fetch and render books from mock API
+
+✅ Borrow a book and display it in the “Borrowed” list
+
+✅ Prevent borrowing the same book twice
+
+✅ Prevent borrowing more than 2 books
+
+✅ Return a book and restore its availability
+
+✅ Show empty state messages for both lists
+
+All tests follow Testing Library best practices (findBy*, queryBy*, waitFor) ensuring accessible and stable selectors.
+
 ```
